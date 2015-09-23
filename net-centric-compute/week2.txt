@@ -1,0 +1,257 @@
+NOTE: ALL EQNS are in LaTeX format
+
+Time division management - circuit switch
+
+| 1 | 2 | 3 | 4 |
+\   /          
+slot (8bit/slot)     
+
+<-----frame----->
+
+Packet switching allows more users
+
+	this is why circuit switch not prominent
+	
+	Why
+
+		ex:
+			circuit:
+				1Mbps
+
+				each user
+					100kbps when active
+					active 10% of time
+
+			packet:
+
+				same link
+				active user can use more bandwidth
+					most users not using internet at exact same time
+					if 35 users, chance that 10 users using internet at same time
+						probability virtually zero >.0004
+
+		Binomial probability distribution 
+
+			$\frac{n!}{k!(n-k)!} = \binom{n}{k}, \binom{n}{k}p^{k}(1-p)^{n-k}$
+
+	good for bursty data, what most humans end up doing
+
+		shared resources
+
+		simpler
+
+	can be congested if multiple active users
+
+		may need reliable data transfer to ensure lack of dropping
+		
+	congestion mitigation
+
+		receiving node/host may ask for slower transfer
+
+	
+ISPs
+
+	how ends and hosts are connected
+
+	How to connect all ISPs?
+		
+		connect all hosts to one another: $n^{2}$
+
+		"Global ISP" monopoly: $log2 n$
+
+		Tier 1 ISPs, connected by IXPs
+			largests ISPs
+		
+		Content provider networks, google etc; try to provide better service by being high level
+		
+	ISP types
+
+		Tier 1. Monolithic ISPs on par with Content provider networks
+
+		Regionals, connects lower level ISPs to tier 1's by peering agreement
+
+		access ISP, consumer level ISP
+
+Delay Loss Throughput
+
+	queue delay
+		
+		packets queue in buffers
+
+		packets come in and queue in buffer
+
+		if packets build up faster than they can be thrown out, delays happen
+		
+		if buffer full, packets get dropped
+
+		packets can be waiting in queue for awhile
+
+		example analogy:
+
+			traffic intensity - \frac{La}{R}
+
+			more packets, exponential delay
+			
+			too many cars, highway nearly stops
+
+	nodal processing
+
+		check for errors
+
+		determine where to send it
+			routing
+
+		check header, etc
+
+		delay expected: less than a millisecond
+
+	transmission delay
+
+		$\frac{L}{R}$
+
+		time it takes to get from end to end through nodes 
+
+	Propogation Delay
+
+		delay caused by distance and physical speed of electrons/lights used to carry information
+
+		$\frac{d}{s}
+
+		d = lenght of physical link
+
+		s = 2.8x10^{8} meters/sec
+
+		expected delay: in nanoseconds
+
+	Caravan analogy
+
+		cars propagate 
+			at 100km/hr
+
+		toll booths take 12sec/car
+
+		tool booths separated by 100km/hr
+
+		time it takes to push cars through to second booth = 12sec * n cars
+
+		time it takes to get to toll booth 100km/hr / 100km = 1hr
+
+		time it takes to
+
+Throughput
+
+	average rate of transmission (bandwidth) between ends and nodes
+
+	instantaneous: in the moment transmission rate - R bits/sec
+
+	average: average over a period of time
+
+	data can't flow faster than slowest link
+		
+		a bottleneck
+
+		generally R_{c} or R_{s} is the bottle neck
+
+			backbone not bottleneck
+	
+Protocol stacks
+
+	layers
+
+		each layer does some service
+			
+		layers above help layers below
+
+		layering allows for modularity, ease of replacement, fix etc.
+
+		IP stack - common
+
+			Application - support network apps
+
+			transport - process data transferring
+
+			network - routing of datagrams from source to destination
+
+			link - data transfer between networks (ethernet, 802.11, etc)
+
+			physical - physical hardware, wire
+
+		higher level need lower level services
+
+		each layer adds it's own packet header - headers get stripped as needed
+
+	networks are complex network of networks
+
+		has to be partitioned to separate layers to simplify
+
+		different methods of communicating different things
+
+	computer network modeled
+
+		build for incoming and outgoing
+
+		incoming
+
+		outgoing
+
+Security
+
+	whole field in it's own right
+
+	defend against bad guys
+
+	design archs against attack
+
+		whole other class
+
+	Internet was not built for security
+		
+		mutually trusting users
+
+		catching up
+
+	malware
+
+		virus
+
+			bad binary executed by user by choice
+
+		worm
+
+			passively catching bad binary that get arbitrarily executed
+
+		botnet
+
+			series of mahines controlled by master to do nefarious things like DDoS
+
+		DDOS
+
+			overwhelm networks with traffics
+
+		Packet sniffing
+
+			sit on link and "sniff" packets to read what's going through
+
+		IP spoofing
+
+			send fake source location
+
+		all on chapter 8
+
+			not in class
+
+History
+
+	Started by ARPA (now DARPA)
+		called ARPAnet - online 1969
+		connect via packet switching
+
+	1976 ethernet created by XEROX
+
+	1979 - ARPAnet, 200 nodes
+
+	1983 - TCP/IP introduced
+
+	1990 - ARPAnet died, commercialization
+
+	2005 - nearly a billion hosts

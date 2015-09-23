@@ -1,0 +1,157 @@
+P2P applications
+
+	no always on server
+
+	arbitraty end to end communication
+
+	users are the server
+
+	P2P generally offers better performance
+
+	time to distrubte client vs server:
+
+		D_{c-s} > Max{\frac{NF}{U_s}, \frac{F}{d_min}}
+
+	server must send N file copies
+
+	time to send copies NF(ilesize)/u(pload)_{s(erver})
+
+	time for peer to dl F/d_min
+
+	slowest peer or longest delay
+
+	in p2p, server only needs to upload 1 copy
+
+	time is NF(u_s + \sigma u_i)
+
+Torrent
+	
+	256Kb chunks
+
+	tracker - keeps track of peers
+
+	torrent - group of peers
+
+	peers can come and go
+	
+	algos
+
+		asks for peers what chunks
+
+		gets rarest first
+
+		generally connect to top for area
+
+		re-eval at random
+
+DHT
+
+	distrubted hash table (key, value)
+
+	users query for keys, gets values
+
+	users can insert key, value
+
+	dht builds tree of clients
+
+	clients go up the tree to find
+
+	ISSUES
+
+		assigning key,vals
+
+		finding key,vals
+
+		keys hashed for faster lookup.
+
+	circular DHT
+
+		only knows successor and predecessor
+
+		can be worst case O(n)
+
+	circular dht with shortcuts
+
+		similar to binary tree
+
+		worst case O(log_2 n)
+
+	churn
+
+		checks for liveliness
+
+		will choose new successor if one drops
+
+socket programming
+
+	sockets are doors to applications and transport layer
+
+	two types, udp - tcp
+
+	udp needs no welcome socket
+
+		users create and send out
+
+Transport layer
+
+	breaks - assembles messages into segments, sends message to network layer or application
+
+	logical end to end communication
+
+Network layer is communication between hosts
+	
+	messages get concatenated, multiplexed
+		
+	multiplexer model
+
+	___	|\
+	___	| \
+	___	|  \ ___
+	___	|  /
+	___	| /
+		|/
+
+	sent to other host via net layer
+
+Transport layer handles process communication
+
+	tcp header allows to demultiplex and seperate the individual messages and send to appropriate socket
+
+UDP demultiplex
+
+	destination IP - port
+
+	no need for source
+
+	host sends to appropriate socket based on port number
+
+TCP demultiplex
+
+	Source IP - port, Destination IP - socket
+
+	allows for more than one socket per port, unique connect for each based on source IP
+
+
+UDP transport
+
+	checksum
+		
+		\sigma of all data
+
+		wrap around overflow
+			full adder with carry over of last adder feeding into first adder's
+
+		checksum = NOT(SUM)
+
+		Receiver XORs its sum plus checksum
+
+		if all 1's, good, else bad
+
+		check for errors
+			does not correct error
+			if not equal, error
+
+	length of data
+
+		
+word describes size of data

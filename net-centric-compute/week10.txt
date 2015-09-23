@@ -1,0 +1,141 @@
+Chapter 4 - Network Layer
+
+Service Models
+
+forwarding -> moving packets to different networks
+
+routing -> dictates forwarding path
+
+how a router works
+
+routing -> determines route, who to forward to
+
+broadcast, multicast
+
+
+VIRTUAL CIRCUIT and DATAGRAM NET
+
+	Guaranteed bandwidth?
+	packet jitter?
+		Jitter -> faster or slower than expected
+	loss free?
+	in order delivery
+	
+	IP  & TCP/UDP & no guarantees, best effort
+
+	ATM & CBR     & constant speed, ordered, no loss
+
+	ATM & VBR
+
+	virtual circuit -> connection, network layer, service
+	Datagram -> connectionless service
+
+	VIRTUAL CIRCUIT - X.25, ATM
+
+		call setup, teardown, like TCP.
+		packets are identified by VC identifier.
+		routers maintain statefullness.
+		dedicated resources, guaranteed performance
+
+		VC number can change constantly based on forward table
+
+		Virtual circuits remove the need for processing packets and allow for pure byte streams between end systems
+
+
+IPv4 -> 32  bits
+IPv6 -> 128 bits
+
+Routing
+
+	Forwarding table
+
+		algo makes table
+		header is checked to determine next forwarding target
+		longest prefix match
+
+			find address that is closest to matching range.
+
+Routers
+	       routing proc
+	             A
+				 |
+				 V
+	Inputs -> Switch -> Outputs
+
+	Input
+
+		line terminator
+		Link layer (recv)
+		Lookup, forwarding (buffer)
+
+	Switch fabrics
+
+		input/output rates
+		N inputs -> switch rate N times faster for desiredspeed
+
+		Memory
+			as fast as memory bandwidth + bus delay * 2
+		BUS
+			switch speed limited by bus bandwidth, one bus traversal
+		Crossbar
+			overcomes bus limitation
+			allows for data to pick dedicated routes
+			semaphore like networking
+
+	Output
+
+		buffer if data gets sent in too fast
+		link layer send
+		line terminator
+
+	Buffer sizes
+
+		\frac{RTT \times Capacity}{sqrt{N}}
+		
+
+Internet Protocol
+
+	Internet Net layer
+
+	addressing, datagrams, forwarding table
+
+	ICMP
+
+		error, debugging, router signaling
+
+	header - 32bit long
+
+		version, head length, type of service, length
+
+		16 bit ident, flags, fragment offset
+
+		time to live, upper layer, header checksum
+
+		32bit address - source
+
+		32bit address - destination
+
+		options
+
+		DATA
+
+	IP Adress
+
+		binary, 32bit number separated by 8 bits into 4 subnets
+
+		subnet, least significant byte
+
+		denoted by /1-31
+
+		CIDR - Classless InterDomain Routing
+			
+			subnet portion of net
+
+			address from FF.FF.FF.FF/#bits
+
+		DHCP
+
+			server allocates address on the fly
+
+post first to chapter 3
+

@@ -1,0 +1,103 @@
+exam 2 2015-4-15
+
+reliable data transfer
+
+characteristics of unreliable channel determines complexity of protocol
+
+finite state machine
+
+ \     /
+  o<--o
+  |  / \
+  |   |
+ \ /  |
+  o-->o
+ /     \
+
+event cause state transition
+
+actions taken on state change
+
+only finite number of states
+
+### rdt 1.0, with reliable connection
+
+sender:
+-> (wait)>-| send data
+      / \  | make packet
+	   |---| send as datagram
+
+### rdt 2.0, unreliable connection (bit flips only)
+
+receiver messages needed to confirm, checksum.
+
+ACK - Acknowledgement
+
+NAK - Negative Acknowledgement
+
+	resends on NAK
+
+-> (wait for data) ----> send() ----> (wait for confirmation) --|
+             / \                                                |
+			  |--------------- OK, else resend <----------------|
+
+-> (wait to receive) --> check data -> if ok, send ack, return -> else send nak
+			   / \														|
+				|-------------------------------------------------------|
+
+what if receiver ACK/NAK corrupt?
+
+	solution, add sequence number to packets
+
+	this allows sender to retransmit if it gets a poorly understood response
+
+	can be safely discarded if duplicate
+
+Reliable transfer, unreliable (NAK-free)
+
+receiver sends last packet it got ok.
+
+duplicate ACKs are treated as a NAK
+
+### Reliable transfer, unreliable (bit flip, packet loss)
+
+ACKs, checksum, retransmit, seq num
+
+NEED one more, A timer
+
+	if times out resends or kill connection
+
+	Spurious retransmission -> resend prematurely
+		
+		calculated using 
+
+Stop wait - why it's bad
+
+U_sender = \frac{\frac{L}{R}}{RTT + \frac{L}{R}}
+
+U_sender is a measure of bandwidth utilization - fraction of time sending a packaet and waiting for ACK
+
+fixing stop and wait
+
+pipeline
+
+	send multiple in serial and get multiple acks back
+
+	Sliding window
+
+	go-back-n
+
+		cannot buffer out of order
+
+	selective repeat
+
+		can buffer and reorder
+	
+	window
+
+		size of unack'd packets
+
+		in go-back-n, can't send more than window size -> fixed
+
+		assumed ack represents up to how many received, can't assume it received out of order.
+

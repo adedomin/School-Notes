@@ -1,0 +1,89 @@
+exam 2/18/15
+
+sockets are like doors: serve as means to communicate with software at application level
+
+IPC = inter process communication
+
+messages
+
+	requests -> response
+
+syntax
+
+	how data is delineated
+
+semantics
+
+	meaning of information
+
+rules
+
+	how to request/respond
+
+transport services
+
+	data integrity - reliability reqs
+		TCP, file transfer
+
+	timing - real time, delayed?
+
+	throughput - req minimum? no?
+
+	security - verification, encryption
+
+transport protocols:
+
+	TCP
+
+		Reliable transit
+
+		flow control - don't overwhelm receiver
+
+		congestion control - tell sender to slow down
+
+		DOES NOT
+
+			minimum throughput, timing, security
+
+		connection oriented - client - server handshake	
+
+	UDP
+
+		none of the above
+
+		less data overhead
+
+		simple
+
+Stateless
+
+	past client requests are meaningless
+	no recollection
+
+	maintaining state is complex
+
+non-persistent
+
+	one object per connection
+
+	connection closed at end
+
+persistent
+
+	multiple object over single tcp connection between clent server
+
+RTT - round trip time
+
+	time to go from point a to b to a
+
+	one rtt to initiate tcp connection
+
+	one to request and get a response
+
+	+ file transfer time
+
+	2 RTT + file transit time
+
+persistent http means less RTT
+
+

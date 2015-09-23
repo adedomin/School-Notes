@@ -1,0 +1,68 @@
+May 6th, fnal due
+
+one more HW assign
+
+
+ROUTING
+
+	link state
+
+	distance vector
+
+		creates forward table
+
+	graph theory N E
+
+		N nodes
+
+		E is set of link
+
+	looking for least cost route
+	
+	dijkstra's
+
+		broadcast, all know
+
+		distance[source] <- 0;
+		previous[source] <- unknown
+
+		foreach node in graph
+			if node != source:
+				distance[node] <- infinity
+				previous[node] <- unknown
+			N'.append(node);
+		
+		foreach node in N':
+
+
+	A*
+
+	Global
+
+		All routers know network topology
+
+	Distance
+
+		only know 
+
+	Autonoumous systems - Hierarchy routing
+
+		manage internal routing, obfuscate other systems
+
+
+Intra-AS
+
+	Open Shortest Path First
+
+		dijkstra
+
+	Routing Information Protocol
+
+		Bellman-Ford 
+
+
+Inter - Autonoumous Systems
+
+	Border Gate Protocol
+		
+		Hot potato

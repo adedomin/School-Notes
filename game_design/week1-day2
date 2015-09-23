@@ -1,0 +1,112 @@
+models are
+	UML
+
+what they should do
+
+IDE's have one?
+	????
+
+uml, code generation?
+	framework
+
+documentation
+	doxygen
+		supports manual output to LaTeX
+	javadocs
+		auto gens class description
+		html
+	visual studio
+		uml doc gen
+
+IDEs
+
+	visual studio 2013
+
+	android studio
+
+webpage
+	individual clients launch from it
+
+technologies
+
+	role based computing
+
+		user permissions
+
+	socket programming
+
+	source control
+		git
+
+	dedicated server
+
+	URI schema
+		report location
+
+	domain name
+
+	reverse shell
+
+	database
+
+		php
+
+		sql?
+
+		make my own???
+
+			red black tree?
+
+				structs of info?
+
+HOME WORK
+
+	DEMO 0
+
+		dedicated server
+			webserver
+		
+	DEMO 0.1
+
+		hello world, android
+
+	DEMO 0.2
+
+		get loations
+
+		store locations
+
+	DEMO 0.3
+
+		mapping
+			
+			OpenStreetMap
+
+	DEMO 0.4
+
+		messegeing
+
+		"deployment"
+
+		store locations in DB
+
+		query DB
+			DB of GPS data
+
+		bluetooth radio battle?
+
+
+gameplay?
+
+	phone shooting
+
+		NEED COMPASS
+		Location
+		"fling projectiles" with phone
+
+		defend assets
+
+	break bluetooth connection
+		
+		retreat
+	

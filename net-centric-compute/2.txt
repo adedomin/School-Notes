@@ -1,0 +1,3 @@
+exam 1 next week
+
+CH1 - CH2 (HTTP, FTP, TCP/UDP, DNS, MAIL [SMTP, POP3, IMAP])

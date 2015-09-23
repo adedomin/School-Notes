@@ -1,0 +1,122 @@
+exam 1 next week
+
+CH1 - CH2 (HTTP, FTP, TCP/UDP, DNS, MAIL [SMTP, POP3, IMAP])
+
+HTTP
+
+keeping state
+
+	cookies
+	unique IDs
+	
+cache
+
+	proxy is both server and client
+
+	attempts to reduce access link use by having a web cache
+
+	caching example
+
+		LAN generally faster than outbound
+
+		no caching means LAN speed goes mostly unused
+
+	caching utilization
+
+		Suppose
+		40% generally satisfied by cache
+
+		60% need outbound
+		
+	conditional GET
+
+		if modified since, don't fetch if cache up to date
+
+			304 NOT MODIFIED if unchanged
+
+		else
+
+			200 OK (plus change)
+
+FTP
+
+	USER
+
+	PASS
+
+	LIST
+
+	RETR
+
+	STOR
+
+	response
+
+		331 Username OK
+
+
+MAIL
+
+	User Agents
+		
+		most user agents include an MTA
+
+	Mail Servers
+
+		MTA (transport)
+			SMTP [RFC 2821]
+				port 25
+
+		MDA (Delivery to Agents)
+			POP3
+			IMAP
+
+
+DNS
+
+	iterated DNS
+
+		IDK, ask up the link
+		to root
+
+			root directs to next link
+
+			link links to next link, etc.
+
+	recursive DNS
+
+		asks root, root asks next link, next link asks; Returns back when found
+
+	DNS are cached
+
+	mapping to dns are cached
+
+	record
+
+		RR format: name, value, type, tt1
+
+		record types,
+
+			A value is IP, name is host name
+
+			NS domain name and authoritative DNS
+
+			CNAME canonical name (real) is value, name is alias
+
+			MX value is mailserver direction related to name
+
+	DNS protocol msg
+
+		msg header
+
+			16bit number for query
+
+	Security
+
+		DDoS
+
+			distributed denial of service
+
+			Not successful
+
+

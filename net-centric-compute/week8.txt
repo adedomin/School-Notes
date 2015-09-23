@@ -1,0 +1,96 @@
+TCP
+
+One sender, one receiver
+
+reliabe in order byte stream
+
+pipelined
+
+full duplex
+	bi-drectional data
+
+flow control
+	
+TCP Header
+
+	source port | destination port
+	     sequence number
+	    acknowledge number
+	Head Len | not used | flags (Urgent, ACK, push data now, rst, syn, fin | receiver set byte window size
+	checksum    | Urgent Data Pointer
+	     options
+	app data
+
+
+sequence numbers
+
+	sequence is byte read up to
+
+	send ack for next byte num expected
+
+Maximum Segment Size
+
+Maximum Transmission Unit
+
+Header (40 bytes)
+
+MSS + HEADER = MTU
+
+TCP sets MSS at 1500 bytes
+
+timeout estimation
+
+need to estimate RTT
+
+Exponential wieghted moving averages
+
+	$EstimatedRTT = (1 - \alpha) \times EstimatedRTT + \alpha \times SampleRTT$
+
+	$\alpha = 0.125$
+
+	$\beta = 0.25$
+
+	Finding standard Deviation
+
+	$DevRTT = (1 - \beta) \times DevRTT + \beta \times (SampleRTT - EstimatedRTT)$
+
+	$timeoutInterval = EstimatedRTT + 4 \times DevRTT$
+
+TCP works on top of IP's unreliable transmission
+
+Timeouts
+
+	can't timer each packet
+
+	timeouts to recover
+
+	ack rcvd:
+
+		if acks acknowledges unacked
+
+			update
+
+Culmultive acknowledgement
+
+	receiver sends up to how many bytes it has
+
+	ignore lost acks of previous expected ack
+
+connect manager
+
+	agree to connect recv buffer
+
+FLAGS
+
+	FIN = 1 means close connection
+	ACK can be sent with a fin too
+
+States
+
+ESTAB
+
+CLOSE_WAIT
+
+LAST_ACK
+
+CLOSED

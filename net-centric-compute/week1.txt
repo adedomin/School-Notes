@@ -1,0 +1,193 @@
+WEEK 1: Computer networks & Internet
+
+how hosts talk to each other
+
+data flows
+
+packet switching, circuit switch
+
+protocol
+
+	set of rules
+		format, order of sent recieve, actions taken on msg transmission, proof of data recieved (receipt)
+
+	three way handshake
+	
+		say hi, server says hi, connection established
+		say bye after
+
+	reliable data transfer
+
+		TCP/IP
+
+	unreliable data
+
+		UDP
+
+	HTTP
+
+		get
+
+		post
+
+	802.11
+		
+		wireless specs
+			2.4GHz - 5GHz
+			11 (FCC allowed) channels -> 2.4GHz
+				3 non overlapping
+				1 - 6 - 11 - (14)
+			A lot of channels -> 5GHz
+
+	blutooth
+
+performance
+
+	loss, delay throughput
+
+	packet dropping
+
+Host & End system
+
+the computer intended to send and recieve
+
+bandwidth
+
+	time measurement of following data sizes
+		bit  = b
+		byte = B = 8 x b
+		packet = x amount of bytes of data
+
+net edge
+
+	hosts, users, access networks, links
+
+net core
+
+	interconnected routers
+
+	network of networks
+
+DSL
+
+	multifrequencies - multiplexing
+
+		one for internet, other for phone
+		
+		carrier freq - multiple signals offset by freqs
+		
+		f1 (Hz) 1000
+
+		f2 (Hz) 250
+
+		different bands, seperate can be transmitted over same line
+		gets split
+
+		modem
+			
+			modulation - demodulation
+			
+				modulation - digital to analog at x Hz
+
+				demodulation - analog of x Hz to digital
+				
+	dedicated line to house	
+
+Cable
+
+	shared line
+		ends at cable head end
+	
+	coaxial
+		conventional cable wire
+
+	hybrid coax fiber
+
+		pulses of light,
+		go thru waveguide
+		trapped in there
+		immune to EM noise
+			more secure
+				(can't splice into fiber easy)
+
+home net
+
+	NAT
+		hides IP of network devices
+			conserves IPv4 addresses
+
+ethernet
+
+	enterprise networks
+
+WLAN
+
+	radio (WiFi)
+	small range
+	wireless is unguided
+
+WWAN
+
+	radio (cell: CDMA, GSM, LTE)
+	larger range, kilometers
+	wireless is unguided
+		goes everywhere
+		as opposed to physical cables
+
+Antenna theory
+
+	size of quarter wavelenght of freq
+
+
+packets
+
+	host send function
+
+		L = size of packet/s in bits to send
+		R = transmission of data per sec
+		L (bits) / R (bits/sec) = transmission delay
+			other factors not included
+
+	host breaks app data into packets
+	packets go thru network to destination
+
+	packet switching
+
+		store packets at recieve, then written to output
+
+		end to end delay (2L/R, assuming zero propagationdelay)
+		
+			N = number of links
+			P = num of packets
+			NL/R (time to get to end)
+
+			N(L/R) + (P-1)(L/R)
+
+		queuing - if Rx faster than Tx
+		packets will be in line waiting to be transmitted
+		if too many packets, they get dropped
+
+		two key net-core funct
+			
+			routing
+				source -> destination
+				algo to det forward table
+				how to get there
+
+			forwarding
+				source -> inbetween -> destination
+
+				forward table locations to go to
+				steps to get to destination
+
+			header
+
+				contains locations - src, dest
+
+	circuit switching
+
+		always a dedicated line
+			continuous
+
+
+				

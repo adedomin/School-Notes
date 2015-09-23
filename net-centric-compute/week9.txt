@@ -1,0 +1,87 @@
+3.6 Congestion Control
+
+sender throttles self
+
+determines congestion
+
+congestion scenario 1
+
+	two senders/receivers
+	
+	one router, infinite buffer
+
+	output link of capacity R no retrans
+
+	Maximum per connect throughput \frac{R}{2}
+
+	larger buffers causes exponential delay while reaching R/2 max
+
+Congestion scenario 2
+
+	router limited buffer hinders senders, senders send when data can be accepted. perfectly linear input output scenario. all router inputs will get outputted at full speed.
+
+	Known losses means that packets can be dropped, generally this causes minimal performance cost.
+
+	spurious retransmission can halve throughput
+
+Congestion Scenario 3
+
+	shared limited resources
+
+Congestion Scenario 4
+
+
+Solutions
+
+	end-end congestion control passive, based on end to end data (delays and loss) 
+
+	network-assisted congestion control
+	routers provide feedback to the sender using reserved bits.
+
+	ABR avail bitrate
+
+	elastic service throttle
+
+	RM Cells
+
+		NI bit - no increase (mild)
+
+		CI bit - lot of congestion
+
+	set by network devices, sent back to sender
+
+TCP Congestion Control
+
+	Additive increase
+		sends larger congestion window till issues occur
+		decrease window in half on loss 
+
+		causes sawtooth pattern
+
+		TCP slow start
+
+			one MSS, ramps up per ack exponentially
+
+	TCP Tahoe
+
+		repeat slow start
+
+	TCP Reno
+
+		start at ssthreash
+
+	ssthresh - point where TCP slow start goes to linear growth
+
+TCP avg throughput
+
+	\frac{3}{4} \times \frac{Window Size}{RTT} bytes/second
+
+TCP throughput - high
+
+	\frac{1.22 \times MSS}{RTT\sqrt{L}}
+
+TCP fairness
+
+	k tcp sessions, bandwidth is \frac{R}{K}
+
+
