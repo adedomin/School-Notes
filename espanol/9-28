@@ -24,3 +24,17 @@ humanidades - arts, literature, languages.
 libreria - book store
 biblioteca - library
 
+clase			dias		hora		como es
+espanol			lunes		cinco		interesante
+				miercoles	y media	
+
+calculo			lunes		las diaz	facil
+				miercoles	
+				viernes
+
+programacion II	martes		las nueve	aburrida
+				jueves		y media
+
+estructuras 	lunes		las dos		facil
+de datos		martes
+				miercoles
