@@ -192,7 +192,7 @@
 
   try 11-19
 
-  submit 16
+  submit 16(c, d, e)
 
   \;
 
@@ -205,6 +205,52 @@
   submit
 
   8, 20, 24, 48
+
+  \;
+
+  Chain Rule
+
+  outside -\<gtr\> inside
+
+  <math|y = sin x\<nocomma\>,> <math|y<rprime|'>>=cos x
+
+  <\math>
+    y=sin<rsup|2>x=<around*|(|sin x|)><rsup|2>
+
+    y = 3x+1
+
+    y=<around*|(|3x+1|)><rsup|100>
+
+    y=u<rsup|100>
+
+    u=3x+1
+  </math>
+
+  <\math>
+    y<rprime|'>=100u<rsup|99>
+
+    u<rprime|'>=3
+  </math>
+
+  <\math>
+    <frac|dy|dx>=<frac|dy|du>\<times\><frac|du|dx>
+
+    100u<rsup|99>\<times\>3=300<around*|(|3x+1|)><rsup|99>
+  </math>
+
+  \;
+
+  <\math>
+    y=sin<around*|(|x<rsup|3>|)>
+
+    <frac|dy|du>=cos u
+
+    <frac|du|dx>=3x<rsup|2>
+
+    <frac|dy|dx>=3x<rsup|2>cos x<rsup|3>
+  </math>
+
+  \;
 </body>
 
 <\initial>
